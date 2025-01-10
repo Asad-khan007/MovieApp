@@ -3,18 +3,18 @@ import React, {useState} from 'react';
 import CustomHeader from '../components/CustomHeader';
 import {COLORS, SPACING} from '../themes/theme';
 import CategoryComponent from '../components/CategoryComponent';
-import {SearchMovies} from '../apis/Apicalls';
+import { searchMovies } from '../apis/Apicalls';
 
 const SearchScreen = (props: any) => {
   const [MoviesList, setMoviesList] = useState<any>([]);
 
   const SearchMoviesList = async (props: any) => {
-    // console.log("search",props)
+    console.log('search', props);
     try {
-      let response = await fetch(SearchMovies(props));
-      let json = response.json();
-      // setMoviesList(json);
-      console.log('response===', json);
+      let response = await fetch(searchMovies(props));
+      // let json = response?.json();
+      // setMoviesList(json?.results)
+      console.log('response===', response);
     } catch (error) {
       console.error('Search Movies Error', error);
     }
