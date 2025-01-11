@@ -18,6 +18,7 @@ const CategoryComponent = (props: any) => {
           alignItems: 'center',
           justifyContent: 'center',
           maxWidth: 160,
+          marginHorizontal: props?.horizontal ? props?.horizontal : 0
         }}>
         <Image
           style={{
